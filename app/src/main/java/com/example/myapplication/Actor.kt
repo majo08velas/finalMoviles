@@ -1,5 +1,3 @@
 package com.example.myapplication
 
-import androidx.appcompat.widget.AppCompatImageView
-
-data class Actor(val name: String, val age: Int, val image:Int)
+open class Actor(val fistName: String, val age: Int, val image:Int)
