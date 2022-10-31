@@ -72,7 +72,7 @@
         android:layout_width="237dp"
         android:layout_height="174dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/jessica"
+        android:src="@drawable/portada"
         app:layout_constraintBottom_toTopOf="@+id/cambiese"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.563"
