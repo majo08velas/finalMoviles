@@ -4,106 +4,233 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver perfil"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/tbar_title"
+            android:textColor="@color/black"
+            android:fontFamily="cursive"
+            android:textSize="30sp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toTopOf="@id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cambiese"
-        app:layout_constraintVertical_bias="0.327"
-        />
+        app:layout_constraintTop_toTopOf="@id/toolbar">
 
-    <TextView
-        android:id="@+id/cambiese"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="Hello World!"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibutton1"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/jessica"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton2"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/matt"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton3"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/chiwetel"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton4"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/kate"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton5"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/sebastian"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton6"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/kristen"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton7"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/michael"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton8"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/sean"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton9"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/aksel"
+                android:foreground="@drawable/round_images"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/scrollView1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="8dp">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="24dp"
-        android:text="Mark"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/buttonVenkat" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="24dp"
-        android:text="Melissa"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.844"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+            <ImageView
+                android:id="@+id/imgView"
+                android:layout_width="110dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/jessica"
+                android:foreground="@drawable/borders"/>
 
-    <Button
-        android:id="@+id/buttonVenkat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="24dp"
-        android:text="Venkat"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/white"
+                android:background="@drawable/round_ibutton"
+                android:text="Jessica Chastain"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="237dp"
-        android:layout_height="174dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/portada"
-        app:layout_constraintBottom_toTopOf="@+id/cambiese"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:text="@string/born_txt"/>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Desarrolladores"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cambiese"
-        app:layout_constraintVertical_bias="0.8"
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:text="@string/awards_text"/>
 
-        />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:text="@string/movies_text"/>
 
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:text="CheckBox1" />
 
-    <ImageButton
-        android:id="@+id/button84"
-        android:layout_width="82dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/jessica"
-        android:foreground="@drawable/custom_image_buttton"
-        android:padding="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="CheckBox2" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="CheckBox1" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="CheckBox2" />
+
+            <Button
+                android:id="@+id/buttonProfileActor"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/btn_character"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/black"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
