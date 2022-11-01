@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -14,10 +15,11 @@ class ProfileActor : AppCompatActivity() {
         setContentView(R.layout.activity_profile_actor)
 
         val text: TextView = findViewById(R.id.actor_name_text)
+        val dateBorn: TextView = findViewById(R.id.actor_born_text)
         val imageView: ImageView = findViewById(R.id.imageView3)
 
-
-        text.text = prefs.getName()
+        text.text = "${prefs.getFullName()}"
+        dateBorn.text = prefs.getDateBorn()
         imageView.setImageResource(prefs.getImage())
 
     }

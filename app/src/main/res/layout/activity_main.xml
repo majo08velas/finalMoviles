@@ -25,7 +25,6 @@
             android:textSize="30sp"/>
     </androidx.appcompat.widget.Toolbar>
 
-
     <HorizontalScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
