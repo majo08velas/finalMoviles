@@ -1,42 +1,36 @@
 package com.example.myapplication
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.example.myapplication.ActorPrefs.Companion.prefs
-import java.util.*
-
 
 // Valor por Defecto
 var actor = Actor("Matt", "Damon", R.drawable.matt, "1970-09-08")
 
-@RequiresApi(Build.VERSION_CODES.O)
 class MainActivity : AppCompatActivity() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
 
-        val buttonUno: ImageButton = findViewById(R.id.button84)
-        val buttonDos: Button = findViewById(R.id.button2)
-        val buttonTres: Button = findViewById(R.id.buttonVenkat)
-        val buttonProfileActor:Button = findViewById(R.id.button4)
-
+        //val buttonUno: Button = findViewById(R.id.button)
+        //val buttonDos: Button = findViewById(R.id.button2)
+        val buttonProfileActor:Button = findViewById(R.id.buttonProfileActor)
 
         //val imageView: ImageView = findViewById(R.id.imageView)
+
+        //val text: TextView = findViewById(R.id.cambiese)
+
+
+
 
         val actor1 = Actor("Matt", "Damon", R.drawable.matt, "1970-09-08")
         val actor2 = Actor("Jessica", "Chastain",R.drawable.jessica, "1977-02-24" )
@@ -45,9 +39,17 @@ class MainActivity : AppCompatActivity() {
         val character2 = Character("Melissa","Lewis", "Astronauta","Principal",actor2)
         val character3 = Character("Venkat","Kapoor", "Astronauta","Secundario", actor3)
 
-        setDataCharacter(buttonUno,character1,actor1)
-        //setDataCharacter(buttonDos,character2,actor2)
-        //setDataCharacter(buttonTres,character3,actor3)
+
+        /*buttonUno.setOnClickListener {
+            text.text = "${character1.name} ${character1.lastName}"
+            imageView.setImageResource(actor1.image)
+            actor = actor1
+        }
+        buttonDos.setOnClickListener {
+            text.text = "${character2.name} ${character2.lastName}"
+            imageView.setImageResource(actor2.image)
+            actor = actor2
+        }*/
 
         buttonProfileActor.setOnClickListener {
             val i = Intent(this, ProfileActor::class.java)
@@ -80,24 +82,7 @@ class MainActivity : AppCompatActivity() {
             dialog.show(supportFragmentManager, "Custom About Me")
             true
         }
-
-    }
-
-    private fun setDataCharacter(btnCharacter:ImageButton, character: Character, actorAux: Actor){
-        val imageView: ImageView = findViewById(R.id.imageView)
-        val text: TextView = findViewById(R.id.cambiese)
-
-        btnCharacter.setOnClickListener{
-            text.text = "${character.name} ${character.lastName}"
-            imageView.setImageResource(actorAux.image)
-            val yearsOld = actorAux.showsAge()
-            Log.d("Años", yearsOld)
-            actor = actorAux
-        }
-
+        else -> super.onOptionsItemSelected(item)
     }
 
 }
-
-
-
