@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name"></string>
+    <string name="info_title">Info desarrolladores</string>
+    <string name="home_title">Inicio</string>
+    <string name="tbar_title">· The Martian ·</string>
+    <string name="btn_character">Ver personaje</string>
+    <string name="born_txt">Fecha de nacimiento: </string>
+    <string name="awards_text">Premios: </string>
+    <string name="movies_text">Películas: </string>
 </resources>

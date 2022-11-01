@@ -7,9 +7,10 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:padding="10dp"
     >
 
-    <TextView
+    <!--<TextView
         android:layout_margin="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +18,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        />-->
 
     <View
         android:layout_width="196dp"
@@ -31,7 +32,7 @@
         android:layout_width="168dp"
         android:layout_height="wrap_content"
         android:textSize="10sp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="10dp"
         android:text="Diseñado y programado por:"
         android:textAlignment="center"
         tools:ignore="SmallSp" />
@@ -40,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="10sp"
-        android:text="mjaranguren07"
+        android:text="· mjaranguren07 ·"
         android:layout_marginBottom="10dp"
         />
 
@@ -48,15 +49,16 @@
     <ImageView
         android:layout_width="123dp"
         android:layout_height="120dp"
+        android:layout_marginBottom="20dp"
         android:contentDescription="Image de Perfil"
-        android:src="@drawable/avatar"
+        android:src="@drawable/princess"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="10sp"
-        android:text="david4vilac"
+        android:text="· david4vilac ·"
         android:layout_marginBottom="10dp"
         />
 
@@ -65,9 +67,15 @@
         android:id="@+id/imageView2"
         android:layout_width="123dp"
         android:layout_height="120dp"
+        android:layout_marginBottom="10dp"
         android:contentDescription="Image de Perfil"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/avatar"
+        />
+    <View
+        android:layout_width="196dp"
+        android:layout_height="4dp"
+        android:background="@color/black"
         />
 
 

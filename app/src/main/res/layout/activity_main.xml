@@ -4,79 +4,234 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="237dp"
-        android:layout_height="174dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/jessica"
-        app:layout_constraintBottom_toTopOf="@+id/cambiese"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="16dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.819"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ver perfil"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cambiese"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/tbar_title"
+            android:textColor="@color/black"
+            android:fontFamily="cursive"
+            android:textSize="30sp"/>
+    </androidx.appcompat.widget.Toolbar>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="16dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/cambiese"
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="Hello World!"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toTopOf="@id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibutton1"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/jessica"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton2"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/matt"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton3"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/chiwetel"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton4"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/kate"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton5"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/sebastian"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton6"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/kristen"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton7"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/michael"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton8"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/sean"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton9"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/aksel"
+                android:foreground="@drawable/round_images"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/scrollView1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.536" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="8dp">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Desarrolladores"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cambiese"
-        app:layout_constraintVertical_bias="0.8" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgView"
+                android:layout_width="110dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/jessica"
+                android:foreground="@drawable/borders"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/white"
+                android:background="@drawable/round_ibutton"
+                android:text="Jessica Chastain"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:text="@string/born_txt"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:text="@string/awards_text"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:text="@string/movies_text"/>
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:text="CheckBox1" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="CheckBox2" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="CheckBox1" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="CheckBox2" />
+
+            <Button
+                android:id="@+id/buttonProfileActor"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/btn_character"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/black"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
