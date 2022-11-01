@@ -1,16 +1,20 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.example.myapplication.ActorPrefs.Companion.prefs
 import java.util.*
+
 
 // Valor por Defecto
 var actor = Actor("Matt", "Damon", R.drawable.matt, "1970-09-08")
@@ -23,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val buttonUno: Button = findViewById(R.id.button)
+        val buttonUno: ImageButton = findViewById(R.id.button84)
         val buttonDos: Button = findViewById(R.id.button2)
         val buttonTres: Button = findViewById(R.id.buttonVenkat)
         val buttonProfileActor:Button = findViewById(R.id.button4)
@@ -38,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         val character3 = Character("Venkat","Kapoor", "Astronauta","Secundario", actor3)
 
         setDataCharacter(buttonUno,character1,actor1)
-        setDataCharacter(buttonDos,character2,actor2)
-        setDataCharacter(buttonTres,character3,actor3)
+        //setDataCharacter(buttonDos,character2,actor2)
+        //setDataCharacter(buttonTres,character3,actor3)
 
 
         buttonProfileActor.setOnClickListener {
@@ -57,9 +61,11 @@ class MainActivity : AppCompatActivity() {
             val dialog = CustomAbout()
             dialog.show(supportFragmentManager, "Custom About Me")
         }
+
+
     }
 
-    private fun setDataCharacter(btnCharacter:Button, character: Character, actorAux: Actor){
+    private fun setDataCharacter(btnCharacter:ImageButton, character: Character, actorAux: Actor){
         val imageView: ImageView = findViewById(R.id.imageView)
         val text: TextView = findViewById(R.id.cambiese)
 
