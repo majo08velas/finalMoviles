@@ -30,10 +30,10 @@ class ProfileActor : AppCompatActivity() {
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
 
         val text: TextView = findViewById(R.id.actor_name_text)
-        rol_text = findViewById(R.id.actor_rol_text)
-        position_text = findViewById(R.id.actor_position_text)
-        days_text = findViewById(R.id.actor_days_text)
-        profession_text = findViewById(R.id.actor_profession_text)
+        rol_text = findViewById(R.id.character_rol)
+        position_text = findViewById(R.id.character_position)
+        days_text = findViewById(R.id.character_days_out)
+        profession_text = findViewById(R.id.character_profession)
         //val dateBorn: TextView = findViewById(R.id.actor_born_text)
         val imageView: ImageView = findViewById(R.id.imageView3)
         btnActor = findViewById(R.id.buttonActor)
@@ -42,17 +42,12 @@ class ProfileActor : AppCompatActivity() {
         val bundle = intent.extras
         lang = bundle?.get("LANG").toString()
         updateResource(lang)
+
+
         text.text = prefs.getFullName()
-
         rol_text.text = prefs.getChRol()
-        //position_text =
-        days_text.text = prefs.getDayOut().toString()
+        days_text.text = " " + prefs.getDayOut().toString()
         profession_text.text = prefs.getProfession()
-
-
-
-
-        //dateBorn.text = prefs.getDateBorn()
         imageView.setImageResource(prefs.getImage())
 
     }
