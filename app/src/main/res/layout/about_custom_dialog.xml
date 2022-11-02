@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:textSize="10sp"
         android:layout_marginBottom="10dp"
-        android:text="Diseñado y programado por:"
+        android:text="@string/modal_title"
         android:textAlignment="center"
         tools:ignore="SmallSp" />
 

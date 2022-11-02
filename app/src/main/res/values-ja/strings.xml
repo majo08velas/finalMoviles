@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"></string>
+    <string name="info_title">開発者情報</string>
+    <string name="home_title">開始</string>
+    <string name="tbar_title">· 火星人 ·</string>
+    <string name="btn_character">キャラクターを表示</string>
+    <string name="btn_actor">俳優を見る</string>
+    <string name="born_txt">生年月日: </string>
+    <string name="awards_text">賞: </string>
+    <string name="movies_text">映画: </string>
+    <string name="modal_title">によって設計およびプログラムされています: </string>
+    <string name="rol_text">役割: </string>
+    <string name="prof_text">職業: </string>
+    <string name="posi_text">チャージ: </string>
+    <string name="days_text">地面から離れた日: </string>
+    <string name="es_text">スペイン語</string>
+    <string name="en_text">英語</string>
+    <string name="pt_text">ポルトガル語</string>
+    <string name="jp_text">日本語</string>
+    <string name="changeLang">言語変更</string>
+</resources>

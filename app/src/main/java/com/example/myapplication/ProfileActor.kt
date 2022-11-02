@@ -13,8 +13,16 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.myapplication.ActorPrefs.Companion.prefs
+import java.util.*
 
 class ProfileActor : AppCompatActivity() {
+
+    lateinit var lang: String
+    private lateinit var btnActor: Button
+    private lateinit var rol_text: TextView
+    private lateinit var position_text: TextView
+    private lateinit var profession_text: TextView
+    private lateinit var days_text: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,12 +30,18 @@ class ProfileActor : AppCompatActivity() {
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
 
         val text: TextView = findViewById(R.id.actor_name_text)
+        rol_text = findViewById(R.id.actor_rol_text)
+        position_text = findViewById(R.id.actor_position_text)
+        days_text = findViewById(R.id.actor_days_text)
+        profession_text = findViewById(R.id.actor_profession_text)
         //val dateBorn: TextView = findViewById(R.id.actor_born_text)
         val imageView: ImageView = findViewById(R.id.imageView3)
-        val btnActor = findViewById<Button>(R.id.buttonActor)
+        btnActor = findViewById(R.id.buttonActor)
 
         btnActor.setOnClickListener{finish()}
-        
+        val bundle = intent.extras
+        lang = bundle?.get("LANG").toString()
+        updateResource(lang)
         text.text = "${prefs.getFullName()}"
         //dateBorn.text = prefs.getDateBorn()
         imageView.setImageResource(prefs.getImage())
@@ -53,5 +67,23 @@ class ProfileActor : AppCompatActivity() {
             true
         }
         else -> super.onOptionsItemSelected(item)
+    }
+
+    fun updateResource(idioma:String){
+        val recursos = resources
+        val displayMetrics = recursos.displayMetrics
+        val configuracion = resources.configuration
+
+        configuracion.setLocale(Locale(idioma))
+        recursos.updateConfiguration(configuracion, displayMetrics)
+        configuracion.locale = Locale(idioma)
+        resources.updateConfiguration(configuracion, displayMetrics)
+
+        btnActor.text = recursos.getString(R.string.btn_actor)
+        rol_text.text = recursos.getString(R.string.rol_text)
+        position_text.text = recursos.getString(R.string.posi_text)
+        profession_text.text = recursos.getString(R.string.prof_text)
+        days_text.text = recursos.getString(R.string.days_text)
+
     }
 }

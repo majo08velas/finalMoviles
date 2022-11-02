@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"></string>
+    <string name="info_title">Developers info</string>
+    <string name="home_title">Home</string>
+    <string name="tbar_title">· The Martian ·</string>
+    <string name="btn_character">Character Info</string>
+    <string name="btn_actor">Actor Info</string>
+    <string name="born_txt">Born date: </string>
+    <string name="awards_text">Awards: </string>
+    <string name="movies_text">Movies: </string>
+    <string name="modal_title">Designed and programmed by: </string>
+    <string name="rol_text">Role: </string>
+    <string name="prof_text">Profession: </string>
+    <string name="posi_text">Position: </string>
+    <string name="days_text">Days outside the earth: </string>
+    <string name="es_text">Spanish</string>
+    <string name="en_text">English</string>
+    <string name="pt_text">Portuguese</string>
+    <string name="jp_text">Japanese</string>
+    <string name="changeLang">Change language</string>
+</resources>

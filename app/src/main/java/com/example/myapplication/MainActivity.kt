@@ -1,22 +1,34 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.myapplication.ActorPrefs.Companion.prefs
+import java.util.*
+
 
 // Valor por Defecto
 var actor = Actor("Matt", "Damon", R.drawable.matt, "1970-09-08")
+var rb1: RadioButton ?= null
+var rb2: RadioButton ?= null
+var rb3: RadioButton ?= null
+var rb4: RadioButton ?= null
+var rg1: RadioGroup ?= null
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var txtBorn: TextView
+    private lateinit var txtAwards: TextView
+    private lateinit var txtMovies: TextView
+    private lateinit var changeLan: TextView
+    private lateinit var buttonProfileActor: Button
+    lateinit var lang: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         //val buttonUno: Button = findViewById(R.id.button)
         //val buttonDos: Button = findViewById(R.id.button2)
         //val text: TextView = findViewById(R.id.cambiese)
-        val buttonProfileActor:Button = findViewById(R.id.buttonProfileActor)
+        buttonProfileActor = findViewById(R.id.buttonProfileActor)
         val imageView: ImageView = findViewById(R.id.imageView)
 
         val btnJessica = findViewById<ImageButton>(R.id.ibutton1)
@@ -46,18 +58,85 @@ class MainActivity : AppCompatActivity() {
         val txtActorAwards = findViewById<TextView>(R.id.actorAwards)
         val txtActorMovies = findViewById<TextView>(R.id.actorMovies)
 
-        val actor1 = Actor("Matt", "Damon", R.drawable.matt, "8 de octubre de 1970")
-        val actor2 = Actor("Jessica", "Chastain",R.drawable.jessica, "24 de marzo de 1977" )
-        val actor3 = Actor("Chiwetel ", "Ejiofor",R.drawable.chiwetel, "10 de julio de 1977" )
-        val actor4 = Actor("Kate ", "Mara",R.drawable.kate, "27 de febrero de 1983" )
-        val actor5 = Actor("Sebastian ", "Stan",R.drawable.sebastian, "13 de agosto de 1982" )
-        val actor6 = Actor("Kristen ", "Wiig",R.drawable.kristen, "22 de agosto de 1973" )
-        val actor7 = Actor("Sean ", "Bean",R.drawable.sean, "17 de abril de 1959" )
-        val actor8 = Actor("Michael ", "Peña",R.drawable.michael, "13 de enero de 1976" )
-        val actor9 = Actor("Aksel ", "Hennie",R.drawable.aksel, "29 de octubre de 1975" )
-        val actor10 = Actor("Jeff ", "Daniels",R.drawable.jeff, "19 de febrero de 1955" )
-        val actor11 = Actor("Donald ", "Glover",R.drawable.donald, "25 de septiembre de 1983" )
-        val actor12 = Actor("Benedict ", "Wong",R.drawable.benedict, "3 de julio de 1971" )
+        rb1 = findViewById(R.id.rb1)
+        rb2 = findViewById(R.id.rb2)
+        rb3 = findViewById(R.id.rb3)
+        rb4 = findViewById(R.id.rb4)
+        rg1 = findViewById(R.id.rg1)
+
+        txtBorn = findViewById(R.id.born_text)
+        txtAwards = findViewById(R.id.award_text)
+        txtMovies = findViewById(R.id.movies_text)
+        changeLan = findViewById(R.id.changeLan)
+
+        /*rb1?.setOnCheckedChangeListener{
+
+            rb2?.setEnabled(false)
+            rb3?.setEnabled(false)
+            rb4?.setEnabled(false)
+            rb1?.setBackgroundColor(R.color.purple_200)
+        }*/
+
+        rb1?.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
+            override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
+                if (isChecked) {
+                    rb2?.setChecked(false)
+                    rb3?.setChecked(false)
+                    rb4?.setChecked(false)
+                    lang = "es"
+                    updateResource(lang)
+                }
+            }
+        })
+
+        rb2?.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
+            override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
+                if (isChecked) {
+                    rb1?.setChecked(false)
+                    rb3?.setChecked(false)
+                    rb4?.setChecked(false)
+                    lang = "en"
+                    updateResource(lang)
+                }
+            }
+        })
+
+        rb3?.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
+            override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
+                if (isChecked) {
+                    rb2?.setChecked(false)
+                    rb1?.setChecked(false)
+                    rb4?.setChecked(false)
+                    lang = "pt"
+                    updateResource(lang)
+                }
+            }
+        })
+
+        rb4?.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
+            override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
+                if (isChecked) {
+                    rb2?.setChecked(false)
+                    rb1?.setChecked(false)
+                    rb3?.setChecked(false)
+                    lang = "ja"
+                    updateResource(lang)
+                }
+            }
+        })
+
+        val actor1 = Actor("Matt", "Damon", R.drawable.matt, "1970-10-08")
+        val actor2 = Actor("Jessica", "Chastain",R.drawable.jessica, "1977-03-24" )
+        val actor3 = Actor("Chiwetel ", "Ejiofor",R.drawable.chiwetel, "1977-07-10" )
+        val actor4 = Actor("Kate ", "Mara",R.drawable.kate, "1983-02-27" )
+        val actor5 = Actor("Sebastian ", "Stan",R.drawable.sebastian, "1982-08-16" )
+        val actor6 = Actor("Kristen ", "Wiig",R.drawable.kristen, "1973-08-22" )
+        val actor7 = Actor("Sean ", "Bean",R.drawable.sean, "1959-04-27" )
+        val actor8 = Actor("Michael ", "Peña",R.drawable.michael, "1976-01-13" )
+        val actor9 = Actor("Aksel ", "Hennie",R.drawable.aksel, "1975-10-29" )
+        val actor10 = Actor("Jeff ", "Daniels",R.drawable.jeff, "1955-02-19" )
+        val actor11 = Actor("Donald ", "Glover",R.drawable.donald, "1983-09-25" )
+        val actor12 = Actor("Benedict ", "Wong",R.drawable.benedict, "1971-07-03" )
 
         val character1 = Character("Mark","Watney", "Astronauta","Principal",actor1)
         val character2 = Character("Melissa","Lewis", "Astronauta","Principal",actor2)
@@ -66,73 +145,73 @@ class MainActivity : AppCompatActivity() {
         btnMatt.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.matt)
             txtActorName.text = actor1.fistName + " " + actor1.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor2.bornDate
+            txtActorBornDate.text = " " + actor2.bornDate
         }
 
         btnJessica.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.jessica)
             txtActorName.text = actor2.fistName + " " + actor2.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor1.bornDate
+            txtActorBornDate.text = " " + actor1.bornDate
         }
 
         btnChiwetel.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.chiwetel)
             txtActorName.text = actor3.fistName + " " + actor3.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor3.bornDate
+            txtActorBornDate.text = " " + actor3.bornDate
         }
 
         btnKate.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.kate)
             txtActorName.text = actor4.fistName + " " + actor4.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor4.bornDate
+            txtActorBornDate.text = " " + actor4.bornDate
         }
 
         btnSebastian.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.sebastian)
             txtActorName.text = actor5.fistName + " " + actor5.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor5.bornDate
+            txtActorBornDate.text = " " + actor5.bornDate
         }
 
         btnKristen.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.kristen)
             txtActorName.text = actor6.fistName + " " + actor6.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor6.bornDate
+            txtActorBornDate.text = " " + actor6.bornDate
         }
 
         btnSean.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.sean)
             txtActorName.text = actor7.fistName + " " + actor7.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor7.bornDate
+            txtActorBornDate.text = " " + actor7.bornDate
         }
 
         btnMichael.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.michael)
             txtActorName.text = actor8.fistName + " " + actor8.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor8.bornDate
+            txtActorBornDate.text = " " + actor8.bornDate
         }
 
         btnAksel.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.aksel)
             txtActorName.text = actor9.fistName + " " + actor9.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor9.bornDate
+            txtActorBornDate.text = " " + actor9.bornDate
         }
 
         btnJeff.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.jeff)
             txtActorName.text = actor10.fistName + " " + actor10.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor10.bornDate
+            txtActorBornDate.text = " " + actor10.bornDate
         }
 
         btnDonald.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.donald)
             txtActorName.text = actor11.fistName + " " + actor11.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor11.bornDate
+            txtActorBornDate.text = " " + actor11.bornDate
         }
 
         btnBenedict.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.benedict)
             txtActorName.text = actor12.fistName + " " + actor12.lastName
-            txtActorBornDate.text = "Fecha de nacimiento: " + actor12.bornDate
+            txtActorBornDate.text = " " + actor12.bornDate
         }
 
 
@@ -156,6 +235,7 @@ class MainActivity : AppCompatActivity() {
                 saveDateBorn(actor.bornDate)
                 saveMovies(actor.movies)
             }
+            i.putExtra("LANG",lang)
             startActivity(i)
         }
 
@@ -181,5 +261,28 @@ class MainActivity : AppCompatActivity() {
         }
         else -> super.onOptionsItemSelected(item)
     }
+
+    fun updateResource(idioma:String){
+        val recursos = resources
+        val displayMetrics = recursos.displayMetrics
+        val configuracion = resources.configuration
+
+        configuracion.setLocale(Locale(idioma))
+        recursos.updateConfiguration(configuracion, displayMetrics)
+        configuracion.locale = Locale(idioma)
+        resources.updateConfiguration(configuracion, displayMetrics)
+
+        rb1?.text = recursos.getString(R.string.es_text)
+        rb2?.text = recursos.getString(R.string.en_text)
+        rb3?.text = recursos.getString(R.string.pt_text)
+        rb4?.text = recursos.getString(R.string.jp_text)
+        txtBorn.text = recursos.getString(R.string.born_txt)
+        txtAwards.text = recursos.getString(R.string.awards_text)
+        txtMovies.text = recursos.getString(R.string.movies_text)
+        changeLan.text = recursos.getString(R.string.changeLang)
+        buttonProfileActor.text = recursos.getString(R.string.btn_character)
+
+    }
+
 
 }

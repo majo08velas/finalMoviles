@@ -4,7 +4,18 @@
     <string name="home_title">Inicio</string>
     <string name="tbar_title">· The Martian ·</string>
     <string name="btn_character">Ver personaje</string>
+    <string name="btn_actor">Ver actor</string>
     <string name="born_txt">Fecha de nacimiento: </string>
     <string name="awards_text">Premios: </string>
     <string name="movies_text">Películas: </string>
+    <string name="modal_title">Diseñado y programado por: </string>
+    <string name="rol_text">Rol: </string>
+    <string name="prof_text">Profesión: </string>
+    <string name="posi_text">Cargo: </string>
+    <string name="days_text">Días fuera de la tierra: </string>
+    <string name="es_text">Español</string>
+    <string name="en_text">Inglés</string>
+    <string name="pt_text">Portugués</string>
+    <string name="jp_text">Japonés</string>
+    <string name="changeLang">Cambio de idioma</string>
 </resources>
