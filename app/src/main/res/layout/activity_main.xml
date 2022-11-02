@@ -113,6 +113,30 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/aksel"
                 android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton10"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/jeff"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton11"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/donald"
+                android:foreground="@drawable/round_images"/>
+
+            <ImageButton
+                android:id="@+id/ibutton12"
+                android:layout_width="82dp"
+                android:layout_height="90dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/benedict"
+                android:foreground="@drawable/round_images"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -133,15 +157,15 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imgView"
+                android:id="@+id/imageView"
                 android:layout_width="110dp"
                 android:layout_height="140dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="60dp"
-                android:background="@drawable/jessica"
                 android:foreground="@drawable/borders"/>
 
             <TextView
+                android:id="@+id/actorName"
                 android:layout_width="150dp"
                 android:layout_height="25dp"
                 android:textAlignment="center"
@@ -150,21 +174,26 @@
                 android:textSize="18sp"
                 android:fontFamily="sans-serif-condensed"
                 android:textColor="@color/white"
-                android:background="@drawable/round_ibutton"
-                android:text="Jessica Chastain"/>
+                android:background="@drawable/round_ibutton"/>
 
             <TextView
+                android:id="@+id/actorBornDate"
                 android:layout_width="150dp"
                 android:layout_height="25dp"
-                android:textAlignment="center"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:textSize="15sp"
                 android:fontFamily="sans-serif-condensed"
+                android:text="@string/born_txt"
+                android:textAlignment="center"
                 android:textColor="@color/black"
-                android:text="@string/born_txt"/>
+                android:textSize="15sp" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/actorAwards"
                 android:layout_width="150dp"
                 android:layout_height="25dp"
                 android:textAlignment="center"
@@ -176,6 +205,7 @@
                 android:text="@string/awards_text"/>
 
             <TextView
+                android:id="@+id/actorMovies"
                 android:layout_width="150dp"
                 android:layout_height="25dp"
                 android:textAlignment="center"

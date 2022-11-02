@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -23,11 +24,88 @@ class MainActivity : AppCompatActivity() {
 
         //val buttonUno: Button = findViewById(R.id.button)
         //val buttonDos: Button = findViewById(R.id.button2)
-        val buttonProfileActor:Button = findViewById(R.id.buttonProfileActor)
-
-        //val imageView: ImageView = findViewById(R.id.imageView)
-
         //val text: TextView = findViewById(R.id.cambiese)
+        val buttonProfileActor:Button = findViewById(R.id.buttonProfileActor)
+        val imageView: ImageView = findViewById(R.id.imageView)
+
+        val btnJessica = findViewById<ImageButton>(R.id.ibutton1)
+        val btnMatt = findViewById<ImageButton>(R.id.ibutton2)
+        val btnChiwetel = findViewById<ImageButton>(R.id.ibutton3)
+        val btnKate = findViewById<ImageButton>(R.id.ibutton4)
+        val btnSebastian = findViewById<ImageButton>(R.id.ibutton5)
+        val btnKristen = findViewById<ImageButton>(R.id.ibutton6)
+        val btnMichael = findViewById<ImageButton>(R.id.ibutton7)
+        val btnSean = findViewById<ImageButton>(R.id.ibutton8)
+        val btnAksel = findViewById<ImageButton>(R.id.ibutton9)
+        val btnJeff = findViewById<ImageButton>(R.id.ibutton10)
+        val btnDonald = findViewById<ImageButton>(R.id.ibutton11)
+        val btnBenedict = findViewById<ImageButton>(R.id.ibutton12)
+
+        val txtActorName = findViewById<TextView>(R.id.actorName)
+        val txtActorBornDate = findViewById<TextView>(R.id.actorBornDate)
+        val txtActorAwards = findViewById<TextView>(R.id.actorAwards)
+        val txtActorMovies = findViewById<TextView>(R.id.actorMovies)
+
+        btnJessica.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.jessica)
+            txtActorName.text = "Jessica Chastain"
+            txtActorBornDate.text = "24 de marzo de 1977"
+        }
+
+        btnMatt.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.matt)
+            txtActorName.text = "Matt Damon"
+        }
+        btnChiwetel.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.chiwetel)
+            txtActorName.text = "Chiwetel Ejiofor"
+        }
+
+        btnKate.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.kate)
+            txtActorName.text = "Kate Mara"
+        }
+
+        btnSebastian.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.sebastian)
+            txtActorName.text = "Sebastian Stan"
+        }
+
+        btnKristen.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.kristen)
+            txtActorName.text = "Kristen Wiig"
+        }
+
+        btnSean.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.sean)
+            txtActorName.text = "Sean Bean"
+        }
+
+        btnMichael.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.michael)
+            txtActorName.text = "Michael Peña"
+        }
+
+        btnAksel.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.aksel)
+            txtActorName.text = "Aksel Hennie"
+        }
+
+        btnJeff.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.jeff)
+            txtActorName.text = "Jeff Daniels"
+        }
+
+        btnDonald.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.donald)
+            txtActorName.text = "Donald Glover"
+        }
+
+        btnBenedict.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.benedict)
+            txtActorName.text = "Benedict Wong"
+        }
+
 
 
 
