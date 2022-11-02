@@ -17,7 +17,7 @@ import java.util.*
 
 // Valor por Defecto
 var actor = Actor("Matt", "Damon", R.drawable.matt, "1970-09-08", "mattdamonteam", arrayOf(), arrayOf())
-var character = Character("Mark","Watney", "Astronauta","Principal",actor,R.drawable.matt,7)
+var character = Character("Mark","Watney", "Astronauta","Principal","",actor,R.drawable.matt,7)
 var rb1: RadioButton ?= null
 var rb2: RadioButton ?= null
 var rb3: RadioButton ?= null
@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         val btnBenedict = findViewById<ImageButton>(R.id.ibutton12)
 
 
-
         rb1 = findViewById(R.id.rb1)
         rb2 = findViewById(R.id.rb2)
         rb3 = findViewById(R.id.rb3)
@@ -67,8 +66,8 @@ class MainActivity : AppCompatActivity() {
         txtMovies = findViewById(R.id.movies_text)
         changeLan = findViewById(R.id.changeLan)
 
-        rb1?.isChecked = true
-        lang = "es"
+        rb2?.isChecked = true
+        lang = "en"
 
         rb1?.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -77,6 +76,7 @@ class MainActivity : AppCompatActivity() {
                 rb4?.isChecked = false
                 lang = "es"
                 updateResource(lang)
+                restartApplication()
             }
         }
 
@@ -87,6 +87,7 @@ class MainActivity : AppCompatActivity() {
                 rb4?.isChecked = false
                 lang = "en"
                 updateResource(lang)
+                restartApplication()
             }
         }
 
@@ -97,6 +98,7 @@ class MainActivity : AppCompatActivity() {
                 rb4?.isChecked = false
                 lang = "pt"
                 updateResource(lang)
+                restartApplication()
             }
         }
 
@@ -107,6 +109,7 @@ class MainActivity : AppCompatActivity() {
                 rb3?.isChecked = false
                 lang = "ja"
                 updateResource(lang)
+                restartApplication()
             }
         }
 
@@ -149,18 +152,18 @@ class MainActivity : AppCompatActivity() {
         val actor11 = Actor("Donald ", "Glover",R.drawable.donald, "1983-09-25", "donaldglover", moviesDonald,donaldAwards)
         val actor12 = Actor("Benedict ", "Wong",R.drawable.benedict, "1971-07-03", "wongrel", moviesBenedict,benedictAwards)
 
-        val character1 = Character("Mark","Watney", "Astronauta","Principal",actor1,R.drawable.mark,7)
-        val character2 = Character("Melissa","Lewis", "Astronauta","Principal",actor2,R.drawable.melissa,5)
-        val character3 = Character("Venkat","Kapoor", "Astronauta","Secundario", actor3,R.drawable.kapoor_ch,0)
-        val character4 = Character("Beth ","Johanssen", "Astronauta","Secundario", actor4,R.drawable.beth,0)
-        val character5 = Character("Chris ","Beck", "Astronauta","Secundario", actor5,R.drawable.chris,0)
-        val character6 = Character("Annie ","Montrose", "Director de relaciones mediáticas","Secundario", actor6,R.drawable.annie_chr,0)//
-        val character7 = Character("Mitch ","Henderson", "Astronauta","Secundario", actor7,R.drawable.mitch_ch,0)
-        val character8 = Character("Rick ","Martínez", "Astronauta","Secundario", actor8,R.drawable.rick,0)
-        val character9 = Character("Alex ","Vogel", "Astronauta","Secundario", actor9,R.drawable.alex,0)
-        val character10 = Character("Teddy ","Sanders", "Astronauta","Secundario", actor10,R.drawable.teddy_ch,0)
-        val character11 = Character("Rick ","Purnell", "Astronauta","Secundario", actor11,R.drawable.rick_ch,0)
-        val character12 = Character("Bruce ","Ng", "Astronauta","Secundario", actor12,R.drawable.bruce_ch,0)
+        val character1 = Character("Mark","Watney", (resources.getString(R.string.profession_astronaut)),(resources.getString(R.string.rol_principal)),(resources.getString(R.string.mat_position)),actor1,R.drawable.mark,760)
+        val character2 = Character("Melissa","Lewis", (resources.getString(R.string.profession_astronaut)),(resources.getString(R.string.rol_principal)),(resources.getString(R.string.melissa_position)),actor2,R.drawable.melissa,760)
+        val character3 = Character("Venkat","Kapoor", (resources.getString(R.string.director_mission)),(resources.getString(R.string.rol_principal)),(resources.getString(R.string.director_mission)), actor3,R.drawable.kapoor_ch,0)
+        val character4 = Character("Beth ","Johanssen", (resources.getString(R.string.profession_astronaut)),(resources.getString(R.string.rol_second)),(resources.getString(R.string.beth_position)), actor4,R.drawable.beth,760)
+        val character5 = Character("Chris ","Beck", (resources.getString(R.string.profession_astronaut)),(resources.getString(R.string.rol_second)),(resources.getString(R.string.chris_position)), actor5,R.drawable.chris,760)
+        val character6 = Character("Annie ","Montrose", (resources.getString(R.string.director_relations)),(resources.getString(R.string.rol_second)),(resources.getString(R.string.annie_position)), actor6,R.drawable.annie_chr,0)//
+        val character7 = Character("Mitch ","Henderson", (resources.getString(R.string.director_hermes)),(resources.getString(R.string.rol_second)),(resources.getString(R.string.mitch_position)), actor7,R.drawable.mitch_ch,0)
+        val character8 = Character("Rick ","Martínez", (resources.getString(R.string.profession_astronaut)),(resources.getString(R.string.rol_second)),(resources.getString(R.string.martinez_position)), actor8,R.drawable.rick,760)
+        val character9 = Character("Alex ","Vogel", (resources.getString(R.string.profession_astronaut)),(resources.getString(R.string.rol_second)),(resources.getString(R.string.alex_position)), actor9,R.drawable.alex,760)
+        val character10 = Character("Teddy ","Sanders", (resources.getString(R.string.director_text)),(resources.getString(R.string.rol_principal)),(resources.getString(R.string.teddy_position)), actor10,R.drawable.teddy_ch,0)
+        val character11 = Character("Rick ","Purnell", (resources.getString(R.string.text_astrodynamics)),(resources.getString(R.string.rol_second)),(resources.getString(R.string.rich_position)), actor11,R.drawable.rick_ch,0)
+        val character12 = Character("Bruce ","Ng", (resources.getString(R.string.drector_jet_text)),(resources.getString(R.string.rol_second)),(resources.getString(R.string.bruce_position)), actor12,R.drawable.bruce_ch,0)
 
         setDataCharacter(btnJessica, character2,actor2)
         setDataCharacter(btnMatt, character1,actor1)
@@ -182,6 +185,7 @@ class MainActivity : AppCompatActivity() {
                 saveFullName("${character.name} ${character.lastName}" )
                 saveImage(character.imageCharacter)
                 saveProfession(character.profession)
+                savePosition(character.position)
                 saveRol(character.rol)
                 saveDayOut(character.daysOut)
             }
@@ -258,6 +262,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun restartApplication(){
+        val i = Intent(this, MainActivity::class.java)
+        startActivity(i)
+        finish()
+    }
+
+
     fun updateResource(idioma:String){
         val recursos = resources
         val displayMetrics = recursos.displayMetrics

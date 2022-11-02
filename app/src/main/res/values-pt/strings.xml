@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">The Martian</string>
     <string name="info_title">Informações do desenvolvedor</string>
     <string name="home_title">Princípio</string>
     <string name="tbar_title">· The Martian ·</string>
@@ -19,4 +19,25 @@
     <string name="pt_text">Português</string>
     <string name="jp_text">Japonês</string>
     <string name="changeLang">Mudança de linguagem</string>
+    <string name="rol_principal">Personagem Principal</string>
+    <string name="rol_second">Caractere secundário</string>
+    <string name="profession_astronaut">Astronauta</string>
+    <string name="director_text">Diretor da NASA</string>
+    <string name="drector_jet_text">Diretor do Laboratório de Propulsão a Jato</string>
+    <string name="director_mission">Diretor, Missões a Marte</string>
+    <string name="director_relations">Diretor de Relações com a Mídia</string>
+    <string name="director_hermes">Diretor de Voo Hermes</string>
+    <string name="text_astrodynamics">Astrodinâmica</string>
+    <string name="mat_position">Botânico e Engenheiro</string>
+    <string name="melissa_position">Comandante e Geólogo</string>
+    <string name="beth_position">Tecnologia SysOp / Reator</string>
+    <string name="chris_position">Especialista em EVA</string>
+    <string name="martinez_position">Piloto</string>
+    <string name="alex_position">Navegador e Químico</string>
+    <string name="rich_position">Físico e Científico de Cohetes</string>
+    <string name="bruce_position">" Líder do equipamento que fabricou el Iris I"</string>
+    <string name="teddy_position">Diretor e Administrador</string>
+    <string name="mitch_position">Trabalho para a NASA</string>
+    <string name="annie_position">Diretor de relações públicas</string>
+    <string name="day_760">760</string>
 </resources>

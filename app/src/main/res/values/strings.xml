@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">The Martian</string>
     <string name="info_title">Info desarrolladores</string>
     <string name="home_title">Inicio</string>
-    <string name="tbar_title">· The Martian ·</string>
+    <string name="tbar_title">· El Martiano ·</string>
     <string name="btn_character">Ver personaje</string>
     <string name="btn_actor">Ver actor</string>
     <string name="born_txt">Fecha de nacimiento: </string>
@@ -18,4 +18,25 @@
     <string name="pt_text">Portugués</string>
     <string name="jp_text">Japonés</string>
     <string name="changeLang">Cambio de idioma</string>
+    <string name="rol_principal">Principal</string>
+    <string name="rol_second">Secundario</string>
+    <string name="profession_astronaut">Astronauta</string>
+    <string name="director_text">Director de la NASA</string>
+    <string name="drector_jet_text">Director del laboratorio de propulsión a chorro</string>
+    <string name="director_mission">Director misiones de Marte</string>
+    <string name="director_relations">Directora de Relaciones con los Medios</string>
+    <string name="director_hermes">Director de vuelo de Hermes</string>
+    <string name="text_astrodynamics">Astrodinámica</string>
+    <string name="mat_position">Botánico e ingeniero</string>
+    <string name="melissa_position">Comandante y Geóloga</string>
+    <string name="beth_position">SysOp / Tecnología de reactores</string>
+    <string name="chris_position">Especialista en EVA</string>
+    <string name="martinez_position">Piloto</string>
+    <string name="alex_position">Navegador y Químico</string>
+    <string name="rich_position">Físico y científico de cohetes</string>
+    <string name="bruce_position">Líder del equipo que fabricó el Iris I</string>
+    <string name="teddy_position">Director General y Administrador</string>
+    <string name="mitch_position">Trabaja para la NASA</string>
+    <string name="annie_position">Director de relaciones públicas</string>
+    <string name="day_760">760</string>
 </resources>

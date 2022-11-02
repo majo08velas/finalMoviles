@@ -8,6 +8,7 @@ class Prefs(context: Context) {
     val SHARE_IMAGE = "IMAGE"
     val SHARE_PROFESSION = "PROFESSION"
     val SHARE_DAYS_OUT = "DAYS_OUT"
+    val SHARE_POSITION = "POSITION"
 
     val storage = context.getSharedPreferences(SHARE_PREFERENCE, 0)
 
@@ -50,6 +51,15 @@ class Prefs(context: Context) {
     fun getImage():Int{
         return storage.getInt(SHARE_IMAGE, 0)
     }
+
+    fun savePosition(position:String){
+        storage.edit().putString(SHARE_POSITION, position).apply()
+    }
+    fun getPosition():String{
+        return storage.getString(SHARE_POSITION, "")!!
+    }
+
+
 
 
     fun wipe(){

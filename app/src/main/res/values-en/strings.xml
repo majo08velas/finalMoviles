@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">The Martian</string>
     <string name="info_title">Developers info</string>
     <string name="home_title">Home</string>
     <string name="tbar_title">· The Martian ·</string>
@@ -19,4 +19,25 @@
     <string name="pt_text">Portuguese</string>
     <string name="jp_text">Japanese</string>
     <string name="changeLang">Change language</string>
+    <string name="rol_principal">Main</string>
+    <string name="rol_second">Secondary</string>
+    <string name="profession_astronaut">Astronaut</string>
+    <string name="director_text">"Director of NASA "</string>
+    <string name="drector_jet_text">Director of the Jet Propulsion Laboratory</string>
+    <string name="director_mission">Director Mars Missions</string>
+    <string name="director_relations">Director, Media Relations</string>
+    <string name="director_hermes">Hermes Flight Director</string>
+    <string name="text_astrodynamics">Astrodynamics</string>
+    <string name="melissa_position">Commander and Geologist</string>
+    <string name="mat_position">Botanist and Engineer</string>
+    <string name="beth_position">SysOp / Reactor Tech</string>
+    <string name="chris_position">EVA Specialist</string>
+    <string name="martinez_position">Pilot</string>
+    <string name="alex_position">Navigator and Chemist</string>
+    <string name="rich_position">Physicist and Rocket Scientist</string>
+    <string name="bruce_position">"Leader of the team that made the Iris I "</string>
+    <string name="teddy_position">"Chief Director and Administrator "</string>
+    <string name="mitch_position">Works for NASA</string>
+    <string name="annie_position">PR Director</string>
+    <string name="day_760">760</string>
 </resources>

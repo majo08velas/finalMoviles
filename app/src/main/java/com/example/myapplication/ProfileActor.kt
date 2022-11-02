@@ -47,6 +47,7 @@ class ProfileActor : AppCompatActivity() {
         text.text = prefs.getFullName()
         rol_text.text = prefs.getChRol()
         days_text.text = " " + prefs.getDayOut().toString()
+        position_text.text = prefs.getPosition()
         profession_text.text = prefs.getProfession()
         imageView.setImageResource(prefs.getImage())
 

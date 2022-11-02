@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">" 火星人"</string>
     <string name="info_title">開発者情報</string>
     <string name="home_title">開始</string>
     <string name="tbar_title">· 火星人 ·</string>
@@ -19,4 +19,25 @@
     <string name="pt_text">ポルトガル語</string>
     <string name="jp_text">日本語</string>
     <string name="changeLang">言語変更</string>
+    <string name="rol_principal">選考科目</string>
+    <string name="rol_second">" サブキャラクター"</string>
+    <string name="profession_astronaut">宇宙飛行士</string>
+    <string name="director_text">"ナサのディレクター "</string>
+    <string name="drector_jet_text">" ジェット推進研究所所長"</string>
+    <string name="director_mission">ディレクター、マーズ ミッションディレクター、マーズ ミッション</string>
+    <string name="director_relations">メディア関係部長</string>
+    <string name="director_hermes">エルメス フライト ディレクター</string>
+    <string name="text_astrodynamics">アストロダイナミクス</string>
+    <string name="mat_position">植物学者とエンジニア</string>
+    <string name="melissa_position">"指揮官兼地質学者 "</string>
+    <string name="beth_position">SysOp / 原子炉技術</string>
+    <string name="chris_position">EVAスペシャリスト</string>
+    <string name="martinez_position">"運転者 "</string>
+    <string name="alex_position">ナビゲーター兼ケミスト</string>
+    <string name="rich_position">物理学者とロケット科学者</string>
+    <string name="bruce_position">" アイリスIを作ったチームのリーダー"</string>
+    <string name="teddy_position">チーフディレクター兼アドミニストレーター</string>
+    <string name="mitch_position">NASAで働く</string>
+    <string name="annie_position">広報ディレクター</string>
+    <string name="day_760">"七百六十 "</string>
 </resources>
