@@ -67,6 +67,8 @@ class MainActivity : AppCompatActivity() {
         txtMovies = findViewById(R.id.movies_text)
         changeLan = findViewById(R.id.changeLan)
 
+        rb1?.isChecked = true
+        lang = "es"
 
         rb1?.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -140,7 +142,7 @@ class MainActivity : AppCompatActivity() {
         val character3 = Character("Venkat","Kapoor", "Astronauta","Secundario", actor3,R.drawable.kapoor_ch,0)
         val character4 = Character("Beth ","Johanssen", "Astronauta","Secundario", actor4,R.drawable.beth,0)
         val character5 = Character("Chris ","Beck", "Astronauta","Secundario", actor5,R.drawable.chris,0)
-        val character6 = Character("Annie ","Montrose", "Astronauta","Secundario", actor6,R.drawable.annie_chr,0)
+        val character6 = Character("Annie ","Montrose", "Director de relaciones mediáticas","Secundario", actor6,R.drawable.annie_chr,0)//
         val character7 = Character("Mitch ","Henderson", "Astronauta","Secundario", actor7,R.drawable.mitch_ch,0)
         val character8 = Character("Rick ","Martínez", "Astronauta","Secundario", actor8,R.drawable.rick,0)
         val character9 = Character("Alex ","Vogel", "Astronauta","Secundario", actor9,R.drawable.alex,0)
