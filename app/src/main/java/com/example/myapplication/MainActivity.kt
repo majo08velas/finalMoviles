@@ -46,76 +46,95 @@ class MainActivity : AppCompatActivity() {
         val txtActorAwards = findViewById<TextView>(R.id.actorAwards)
         val txtActorMovies = findViewById<TextView>(R.id.actorMovies)
 
-        btnJessica.setOnClickListener{
-            imageView.setBackgroundResource(R.drawable.jessica)
-            txtActorName.text = "Jessica Chastain"
-            txtActorBornDate.text = "24 de marzo de 1977"
-        }
+        val actor1 = Actor("Matt", "Damon", R.drawable.matt, "8 de octubre de 1970")
+        val actor2 = Actor("Jessica", "Chastain",R.drawable.jessica, "24 de marzo de 1977" )
+        val actor3 = Actor("Chiwetel ", "Ejiofor",R.drawable.chiwetel, "10 de julio de 1977" )
+        val actor4 = Actor("Kate ", "Mara",R.drawable.kate, "27 de febrero de 1983" )
+        val actor5 = Actor("Sebastian ", "Stan",R.drawable.sebastian, "13 de agosto de 1982" )
+        val actor6 = Actor("Kristen ", "Wiig",R.drawable.kristen, "22 de agosto de 1973" )
+        val actor7 = Actor("Sean ", "Bean",R.drawable.sean, "17 de abril de 1959" )
+        val actor8 = Actor("Michael ", "Peña",R.drawable.michael, "13 de enero de 1976" )
+        val actor9 = Actor("Aksel ", "Hennie",R.drawable.aksel, "29 de octubre de 1975" )
+        val actor10 = Actor("Jeff ", "Daniels",R.drawable.jeff, "19 de febrero de 1955" )
+        val actor11 = Actor("Donald ", "Glover",R.drawable.donald, "25 de septiembre de 1983" )
+        val actor12 = Actor("Benedict ", "Wong",R.drawable.benedict, "3 de julio de 1971" )
+
+        val character1 = Character("Mark","Watney", "Astronauta","Principal",actor1)
+        val character2 = Character("Melissa","Lewis", "Astronauta","Principal",actor2)
+        val character3 = Character("Venkat","Kapoor", "Astronauta","Secundario", actor3)
 
         btnMatt.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.matt)
-            txtActorName.text = "Matt Damon"
+            txtActorName.text = actor1.fistName + " " + actor1.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor2.bornDate
         }
+
+        btnJessica.setOnClickListener{
+            imageView.setBackgroundResource(R.drawable.jessica)
+            txtActorName.text = actor2.fistName + " " + actor2.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor1.bornDate
+        }
+
         btnChiwetel.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.chiwetel)
-            txtActorName.text = "Chiwetel Ejiofor"
+            txtActorName.text = actor3.fistName + " " + actor3.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor3.bornDate
         }
 
         btnKate.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.kate)
-            txtActorName.text = "Kate Mara"
+            txtActorName.text = actor4.fistName + " " + actor4.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor4.bornDate
         }
 
         btnSebastian.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.sebastian)
-            txtActorName.text = "Sebastian Stan"
+            txtActorName.text = actor5.fistName + " " + actor5.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor5.bornDate
         }
 
         btnKristen.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.kristen)
-            txtActorName.text = "Kristen Wiig"
+            txtActorName.text = actor6.fistName + " " + actor6.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor6.bornDate
         }
 
         btnSean.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.sean)
-            txtActorName.text = "Sean Bean"
+            txtActorName.text = actor7.fistName + " " + actor7.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor7.bornDate
         }
 
         btnMichael.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.michael)
-            txtActorName.text = "Michael Peña"
+            txtActorName.text = actor8.fistName + " " + actor8.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor8.bornDate
         }
 
         btnAksel.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.aksel)
-            txtActorName.text = "Aksel Hennie"
+            txtActorName.text = actor9.fistName + " " + actor9.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor9.bornDate
         }
 
         btnJeff.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.jeff)
-            txtActorName.text = "Jeff Daniels"
+            txtActorName.text = actor10.fistName + " " + actor10.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor10.bornDate
         }
 
         btnDonald.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.donald)
-            txtActorName.text = "Donald Glover"
+            txtActorName.text = actor11.fistName + " " + actor11.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor11.bornDate
         }
 
         btnBenedict.setOnClickListener{
             imageView.setBackgroundResource(R.drawable.benedict)
-            txtActorName.text = "Benedict Wong"
+            txtActorName.text = actor12.fistName + " " + actor12.lastName
+            txtActorBornDate.text = "Fecha de nacimiento: " + actor12.bornDate
         }
 
-
-
-
-
-        val actor1 = Actor("Matt", "Damon", R.drawable.matt, "1970-09-08")
-        val actor2 = Actor("Jessica", "Chastain",R.drawable.jessica, "1977-02-24" )
-        val actor3 = Actor("Chiwetel ", "Ejiofor",R.drawable.chiwetel, "1977-06-10" )
-        val character1 = Character("Mark","Watney", "Astronauta","Principal",actor1)
-        val character2 = Character("Melissa","Lewis", "Astronauta","Principal",actor2)
-        val character3 = Character("Venkat","Kapoor", "Astronauta","Secundario", actor3)
 
 
         /*buttonUno.setOnClickListener {
@@ -133,8 +152,8 @@ class MainActivity : AppCompatActivity() {
             val i = Intent(this, ProfileActor::class.java)
             prefs.run {
                 saveFullName("${actor.fistName} ${actor.lastName}" )
-                saveDateBorn(actor.bornDate)
                 saveImage(actor.image)
+                saveDateBorn(actor.bornDate)
                 saveMovies(actor.movies)
             }
             startActivity(i)
