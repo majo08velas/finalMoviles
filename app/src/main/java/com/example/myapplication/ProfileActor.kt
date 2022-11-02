@@ -42,7 +42,16 @@ class ProfileActor : AppCompatActivity() {
         val bundle = intent.extras
         lang = bundle?.get("LANG").toString()
         updateResource(lang)
-        text.text = "${prefs.getFullName()}"
+        text.text = prefs.getFullName()
+
+        rol_text.text = prefs.getChRol()
+        //position_text =
+        days_text.text = prefs.getDayOut().toString()
+        profession_text.text = prefs.getProfession()
+
+
+
+
         //dateBorn.text = prefs.getDateBorn()
         imageView.setImageResource(prefs.getImage())
 

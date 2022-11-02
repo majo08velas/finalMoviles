@@ -4,9 +4,10 @@ import android.content.Context
 class Prefs(context: Context) {
     val SHARE_PREFERENCE = "Mydtb"
     val SHARE_NAME = "NAME"
-    val SHARE_DATE_BORN = "DATE"
+    val SHARE_ROL = "ROL"
     val SHARE_IMAGE = "IMAGE"
-    val SHARE_MOVIES = "MOVIE"
+    val SHARE_PROFESSION = "PROFESSION"
+    val SHARE_DAYS_OUT = "DAYS_OUT"
 
     val storage = context.getSharedPreferences(SHARE_PREFERENCE, 0)
 
@@ -14,12 +15,20 @@ class Prefs(context: Context) {
         storage.edit().putString(SHARE_NAME, name).apply()
     }
 
-    fun saveDateBorn(name:String){
-        storage.edit().putString(SHARE_DATE_BORN, name).apply()
+    fun saveProfession(name:String){
+        storage.edit().putString(SHARE_PROFESSION, name).apply()
     }
 
-    fun saveMovies(movies: Array<String>){
-        storage.edit().putStringSet(SHARE_MOVIES, movies.toSet()).apply()
+    fun saveRol(rol: String){
+        storage.edit().putString(SHARE_ROL, rol).apply()
+    }
+
+    fun saveDayOut(day: Int){
+        storage.edit().putInt(SHARE_DAYS_OUT, day).apply()
+    }
+
+    fun getDayOut():Int{
+        return storage.getInt(SHARE_DAYS_OUT, 0)
     }
 
     fun saveImage(image:Int){
@@ -30,8 +39,12 @@ class Prefs(context: Context) {
         return storage.getString(SHARE_NAME, "")!!
     }
 
-    fun getDateBorn():String{
-        return storage.getString(SHARE_DATE_BORN, "")!!
+    fun getChRol():String{
+        return storage.getString(SHARE_ROL, "")!!
+    }
+
+    fun getProfession():String{
+        return storage.getString(SHARE_PROFESSION, "")!!
     }
 
     fun getImage():Int{
