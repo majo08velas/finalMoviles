@@ -7,7 +7,7 @@ import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 import java.util.*
 
-open class Actor(val fistName: String, val lastName: String, val image:Int, val bornDate: String,val instagram: String, val movie_a: Array<Int> ){
+open class Actor(val fistName: String, val lastName: String, val image:Int, val bornDate: String,val instagram: String, val movie_a: Array<Int>, val award_a: Array<Int>,){
 
     val awards = arrayOf("Algo")
     val movies = arrayOf("El Marciano")

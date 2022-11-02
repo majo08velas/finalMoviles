@@ -16,7 +16,7 @@ import java.util.*
 
 
 // Valor por Defecto
-var actor = Actor("Matt", "Damon", R.drawable.matt, "1970-09-08", "mattdamonteam", arrayOf())
+var actor = Actor("Matt", "Damon", R.drawable.matt, "1970-09-08", "mattdamonteam", arrayOf(), arrayOf())
 var character = Character("Mark","Watney", "Astronauta","Principal",actor,R.drawable.matt,7)
 var rb1: RadioButton ?= null
 var rb2: RadioButton ?= null
@@ -121,19 +121,31 @@ class MainActivity : AppCompatActivity() {
         val moviesDonald = arrayOf(R.raw.m_donald_1,R.raw.m_donald_2,R.raw.m_donald_3,R.raw.m_donald_4,R.raw.m_donald_5)
         val moviesBenedict = arrayOf(R.raw.m_benedict_1,R.raw.m_benedict_2,R.raw.m_benedict_3,R.raw.m_benedict_4,R.raw.m_benedict_5)
 
+        val mattAwards = arrayOf(R.raw.oscar,R.raw.critics,R.raw.people,R.raw.golden,R.raw.mtv )
+        val jessicaAwards = arrayOf(R.raw.oscar,R.raw.golden,R.raw.critics,R.raw.satellite,R.raw.sag)
+        val chiwetelAwards = arrayOf(R.raw.indpendent,R.raw.bafta,R.raw.nigeria,R.raw.britain,R.raw.aacta)
+        val kateAwards = arrayOf(R.raw.cinemacon, 0,0,0,0)
+        val sebastianAwards = arrayOf(R.raw.mtv,0,0,0,0)
+        val kristenAwards = arrayOf(R.raw.goldy,R.raw.mtv,R.raw.rasperry,0,0)
+        val seanAwards = arrayOf(R.raw.emmy,R.raw.sag,0,0,0)
+        val michaelAwards = arrayOf(R.raw.sag,R.raw.alma,0,0,0)
+        val akselAwards = arrayOf(R.raw.amanda,R.raw.berlin,0,0,0)
+        val jeffAwards = arrayOf(R.raw.emmy,0,0,0,0)
+        val donaldAwards = arrayOf(R.raw.emmy,R.raw.mtv,R.raw.golden,R.raw.grammy,0)
+        val benedictAwards = arrayOf(R.raw.gold,0,0,0,0)
 
-        val actor1 = Actor("Matt", "Damon", R.drawable.matt, "1970-10-08", "mattdamonteam",weekDays)
-        val actor2 = Actor("Jessica", "Chastain",R.drawable.jessica, "1977-03-24", "jessicachastain", moviesJessica)
-        val actor3 = Actor("Chiwetel ", "Ejiofor",R.drawable.chiwetel, "1977-07-10", "chiwetelejiofor__", moviesChiwetel)
-        val actor4 = Actor("Kate ", "Mara",R.drawable.kate, "1983-02-27", "katemara", moviesKate)
-        val actor5 = Actor("Sebastian ", "Stan",R.drawable.sebastian, "1982-08-16", "imsebastianstan", moviesSebastian)
-        val actor6 = Actor("Kristen ", "Wiig",R.drawable.kristen, "1973-08-22", "kristenwiigdaily", moviesKristen)
-        val actor7 = Actor("Sean ", "Bean",R.drawable.sean, "1959-04-27", "sean_bean_official", moviesSean)
-        val actor8 = Actor("Michael ", "Peña",R.drawable.michael, "1976-01-13", "mvegapena", moviesMichael)
-        val actor9 = Actor("Aksel ", "Hennie",R.drawable.aksel, "1975-10-29", "akselhennie", moviesAksel)
-        val actor10 = Actor("Jeff ", "Daniels",R.drawable.jeff, "1955-02-19", "jeffdanielsofficial", moviesJeff)
-        val actor11 = Actor("Donald ", "Glover",R.drawable.donald, "1983-09-25", "donaldglover", moviesDonald)
-        val actor12 = Actor("Benedict ", "Wong",R.drawable.benedict, "1971-07-03", "wongrel", moviesBenedict)
+        val actor1 = Actor("Matt", "Damon", R.drawable.matt, "1970-10-08", "mattdamonteam",weekDays,mattAwards)
+        val actor2 = Actor("Jessica", "Chastain",R.drawable.jessica, "1977-03-24", "jessicachastain", moviesJessica,jessicaAwards)
+        val actor3 = Actor("Chiwetel ", "Ejiofor",R.drawable.chiwetel, "1977-07-10", "chiwetelejiofor__", moviesChiwetel,chiwetelAwards)
+        val actor4 = Actor("Kate ", "Mara",R.drawable.kate, "1983-02-27", "katemara", moviesKate, kateAwards)
+        val actor5 = Actor("Sebastian ", "Stan",R.drawable.sebastian, "1982-08-16", "imsebastianstan", moviesSebastian,sebastianAwards)
+        val actor6 = Actor("Kristen ", "Wiig",R.drawable.kristen, "1973-08-22", "kristenwiigdaily", moviesKristen,kristenAwards)
+        val actor7 = Actor("Sean ", "Bean",R.drawable.sean, "1959-04-27", "sean_bean_official", moviesSean,seanAwards)
+        val actor8 = Actor("Michael ", "Peña",R.drawable.michael, "1976-01-13", "mvegapena", moviesMichael,michaelAwards)
+        val actor9 = Actor("Aksel ", "Hennie",R.drawable.aksel, "1975-10-29", "akselhennie", moviesAksel,akselAwards)
+        val actor10 = Actor("Jeff ", "Daniels",R.drawable.jeff, "1955-02-19", "jeffdanielsofficial", moviesJeff,jeffAwards)
+        val actor11 = Actor("Donald ", "Glover",R.drawable.donald, "1983-09-25", "donaldglover", moviesDonald,donaldAwards)
+        val actor12 = Actor("Benedict ", "Wong",R.drawable.benedict, "1971-07-03", "wongrel", moviesBenedict,benedictAwards)
 
         val character1 = Character("Mark","Watney", "Astronauta","Principal",actor1,R.drawable.mark,7)
         val character2 = Character("Melissa","Lewis", "Astronauta","Principal",actor2,R.drawable.melissa,5)
@@ -198,6 +210,52 @@ class MainActivity : AppCompatActivity() {
         else -> super.onOptionsItemSelected(item)
     }
 
+    private fun setDataCharacter(btnCharacter:ImageButton, characterAux: Character, actorAux: Actor){
+        val imageView: ImageView = findViewById(R.id.imageView)
+
+        val txtActorName = findViewById<TextView>(R.id.actorName)
+        val txtActorBornDate = findViewById<TextView>(R.id.actorBornDate)
+        //val txtActorAwards = findViewById<TextView>(R.id.actorAwards)
+
+        val instagram: ImageView = findViewById(R.id.imageInstagram)
+
+        val imageViewMovie1: ImageView = findViewById(R.id.movie1)
+        val imageViewMovie2: ImageView = findViewById(R.id.movie2)
+        val imageViewMovie3: ImageView = findViewById(R.id.movie3)
+        val imageViewMovie4: ImageView = findViewById(R.id.movie4)
+        val imageViewMovie5: ImageView = findViewById(R.id.movie5)
+
+        val imageViewAward1: ImageView = findViewById(R.id.award1)
+        val imageViewAward2: ImageView = findViewById(R.id.award2)
+        val imageViewAward3: ImageView = findViewById(R.id.award3)
+        val imageViewAward4: ImageView = findViewById(R.id.award4)
+        val imageViewAward5: ImageView = findViewById(R.id.award5)
+
+        btnCharacter.setOnClickListener{
+            imageView.setBackgroundResource(actorAux.image)
+            txtActorName.text = actorAux.fistName + " " + actorAux.lastName
+            txtActorBornDate.text = " " + actorAux.bornDate
+            //txtActorAwards.text = actorAux.awards[0]
+            character = characterAux
+
+            imageViewAward1.setBackgroundResource(actorAux.award_a[0])
+            imageViewAward2.setBackgroundResource(actorAux.award_a[1])
+            imageViewAward3.setBackgroundResource(actorAux.award_a[2])
+            imageViewAward4.setBackgroundResource(actorAux.award_a[3])
+            imageViewAward5.setBackgroundResource(actorAux.award_a[4])
+
+            imageViewMovie1.setBackgroundResource(actorAux.movie_a[0])
+            imageViewMovie2.setBackgroundResource(actorAux.movie_a[1])
+            imageViewMovie3.setBackgroundResource(actorAux.movie_a[2])
+            imageViewMovie4.setBackgroundResource(actorAux.movie_a[3])
+            imageViewMovie5.setBackgroundResource(actorAux.movie_a[4])
+
+            instagram.setOnClickListener{
+                val intent = Intent(Intent.ACTION_VIEW, actorAux.getInstagram(actorAux.instagram))
+                startActivity(intent)
+            }
+        }
+    }
     fun updateResource(idioma:String){
         val recursos = resources
         val displayMetrics = recursos.displayMetrics
@@ -220,42 +278,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setDataCharacter(btnCharacter:ImageButton, characterAux: Character, actorAux: Actor){
-        val imageView: ImageView = findViewById(R.id.imageView)
-
-        val txtActorName = findViewById<TextView>(R.id.actorName)
-        val txtActorBornDate = findViewById<TextView>(R.id.actorBornDate)
-        val txtActorAwards = findViewById<TextView>(R.id.actorAwards)
-
-        val instagram: ImageView = findViewById(R.id.imageInstagram)
-
-        val imageViewMovie1: ImageView = findViewById(R.id.movie1)
-        val imageViewMovie2: ImageView = findViewById(R.id.movie2)
-        val imageViewMovie3: ImageView = findViewById(R.id.movie3)
-        val imageViewMovie4: ImageView = findViewById(R.id.movie4)
-        val imageViewMovie5: ImageView = findViewById(R.id.movie5)
-
-        btnCharacter.setOnClickListener{
-            imageView.setBackgroundResource(actorAux.image)
-            txtActorName.text = actorAux.fistName + " " + actorAux.lastName
-            txtActorBornDate.text = " " + actorAux.bornDate
-            txtActorAwards.text = actorAux.awards[0]
-            character = characterAux
-
-            imageViewMovie1.setBackgroundResource(actorAux.movie_a[0])
-            imageViewMovie2.setBackgroundResource(actorAux.movie_a[1])
-            imageViewMovie3.setBackgroundResource(actorAux.movie_a[2])
-            imageViewMovie4.setBackgroundResource(actorAux.movie_a[3])
-            imageViewMovie5.setBackgroundResource(actorAux.movie_a[4])
-
-            instagram.setOnClickListener{
-                val intent = Intent(Intent.ACTION_VIEW, actorAux.getInstagram(actorAux.instagram))
-                startActivity(intent)
-            }
-        }
-
-
-
-
-    }
 }
